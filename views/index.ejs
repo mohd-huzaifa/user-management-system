@@ -1,0 +1,44 @@
+<!-- open header  -->
+  <%-  include('include/_header') %>
+<!-- close header -->
+
+
+
+
+
+<main>
+  <h2>Users</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Gender</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0; i<users.length; i++) { %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%= users[i].name %></td>
+        <td><%= users[i].email %></td>
+        <td><%= users[i].role %></td>
+        <td><%= users[i].gender %></td>
+        <td><%= users[i].active %></td>
+        <td>
+            <a href="/update-user?id=<%= users[i]._id%>"><i class="fa-solid fa-pencil"></i></a>
+            <a data-id="<%= users[i]._id%>" class="del"><i class="fa-sharp fa-solid fa-trash"></i></a>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <button><a href="/add-user">Add User</a></button>
+</main>
+
+<!-- open footer  -->
+<%-  include('include/_footer') %>
+<!-- close footer -->

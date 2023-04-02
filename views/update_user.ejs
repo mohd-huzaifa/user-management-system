@@ -1,0 +1,49 @@
+<!-- open header  -->
+<%-  include('include/_header') %>
+<!-- close header -->
+
+
+
+
+<main class="UserForm">
+    <h2>Update User</h2>
+    <form method="post" class="form" id="form">
+      <label for="name">Name:</label>
+      <input type="hidden" name="id" value="<%= user._id%>" required>
+      <input type="text" id="name" name="name" placeholder="Enter Name" value="<%= user.name%>" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="abc@gmail.com" value="<%= user.email%>" required>
+      
+      
+      <label for="role">Role:</label>
+      <select id="role" name="role" value="<%= user.role%>" required>
+        <option value="web_developer">Web Developer</option>
+        <option value="android_developer">Android Developer</option>
+        <option value="data_scientist">Data Scientist</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="gender">Gender</label>
+      <select name="gender" id="gender" value="<%= user.gender%>">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="status">Status</label>
+      <select name="status" id="status" value="<%= user.status%>">
+        <option value="Active">Active</option>
+        <option value="InActive">Inactive</option>
+      </select>
+      
+      <button type="submit">Update</button>
+    </form>
+  </main>
+
+
+
+
+
+<!-- open footer  -->
+<%-  include('include/_footer') %>
+<!-- close footer -->
